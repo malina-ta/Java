@@ -52,18 +52,7 @@ public class Main {
                 AddElement (birthday, birthdaySet, c2, c1);
                 AddElement (gender, genderSet, c3, c1);
                 AddElement (city, citySet, c4, c1);
-
-//                System.out.print(c1+"\t");
-//                System.out.print(c2+"\t");
-//                System.out.print(c3+"\t");
-//                System.out.print(c4+"\t");
-//                System.out.println(c5+"\t");
-//            }
             }
-//            rs.close();
-
-
-
         }
         catch (SQLException e) {
             e.printStackTrace();
@@ -153,17 +142,6 @@ public class Main {
 
         long timeSpent = System.currentTimeMillis() - startTime;
         System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
-
-//        for (Map.Entry<Integer, SortedSet<Integer>> t : birthday.entrySet()){
-//                System.out.println(t.getKey() + " : " + t.getValue());
-//        }
-//        for (Map.Entry<Integer, SortedSet<Integer>> t : gender.entrySet()){
-//            System.out.println(t.getKey() + " : " + t.getValue());
-//        }
-//        for (Map.Entry<Integer, SortedSet<Integer>> t : city.entrySet()){
-//            System.out.println(t.getKey() + " : " + t.getValue());
-//        }
-
     }
 
     private static int ScannerParam(String s, int min, int max){

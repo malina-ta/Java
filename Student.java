@@ -1,24 +1,28 @@
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Student {
     private final String name;
-    private final ArrayList<Subject> subjects;
+    private final HashSet<Subject> subjects;
 
     public Student(String name){
         this.name = name;
-        this.subjects = new ArrayList<>();
+        this.subjects = new HashSet<>();
     }
 
     public String getName() {
         return name;
     }
 
-    public ArrayList<Subject> getSubjects() {
+    public HashSet<Subject> getSubjects() {
         return subjects;
     }
 
     public void addSubjects(Subject subject) {
         this.subjects.add(subject);
+    }
+
+    public void deleteSubject(Subject subject){
+        this.subjects.remove(subject);
     }
 
     public String toString()

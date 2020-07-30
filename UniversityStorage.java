@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class UniversityStorage {
     private final ArrayList<Student> storageStudents;
-    private final ArrayList<Subject> storageSubjects;
+    private final HashSet<Subject> storageSubjects;
     public UniversityStorage()
     {
         storageStudents = new ArrayList<>();
-        storageSubjects = new ArrayList<>();
+        storageSubjects = new HashSet<>();
     }
 
     public void addStudent (Student student){
@@ -28,6 +29,11 @@ public class UniversityStorage {
     public int deleteSubject(Subject subject){
         if(storageSubjects.contains(subject)){
             storageSubjects.remove(subject);
+            for (Student student : storageStudents){
+                if(student.getSubjects().contains(subject)) {
+                    student.deleteSubject(subject);
+                }
+            }
             return 1;
         }
         return -1;
@@ -43,7 +49,7 @@ public class UniversityStorage {
         return -1;
     }
 
-    public ArrayList<Subject> getSubjectFromStudent (Student student){
+    public HashSet<Subject> getSubjectFromStudent (Student student){
         if(storageStudents.contains(student)){
             if(student.getSubjects().isEmpty()){
                 return null;
@@ -68,9 +74,9 @@ public class UniversityStorage {
 
     public ArrayList<Student> getStudents (){
         return storageStudents;
-        }
+    }
 
-    public ArrayList<Subject> getSubjects(){
+    public HashSet<Subject> getSubjects(){
         return storageSubjects;
     }
 }

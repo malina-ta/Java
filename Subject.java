@@ -9,6 +9,10 @@ public class Subject {
         this.hours = hours;
     }
 
+    public Subject(String name){
+        this.name = name;
+    }
+
     public String getName(){
         return name;
     }
@@ -22,6 +26,11 @@ public class Subject {
     }
 
     public void setHours(Integer hours){
+        this.hours = hours;
+    }
+
+    public void setDescriptionAndHours(String description, Integer hours){
+        this.description = description;
         this.hours = hours;
     }
 
